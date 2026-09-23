@@ -1,0 +1,290 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube Channel</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #0b0b0b;
+            color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 70px 40px 100px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 60px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        .header {
+            border-bottom: 1px solid #292929;
+            padding-bottom: 45px;
+            margin-bottom: 55px;
+        }
+
+        .date {
+            color: #777;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 52px;
+            margin: 0 0 20px;
+            line-height: 1.1;
+        }
+
+        .intro {
+            color: #999;
+            font-size: 19px;
+            line-height: 1.7;
+            max-width: 750px;
+        }
+
+        .section {
+            margin-bottom: 65px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #999;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 750px;
+        }
+
+        .highlight {
+            border-left: 2px solid #555;
+            padding-left: 25px;
+            margin-top: 30px;
+        }
+
+        .highlight p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        /* IMAGE SECTION */
+
+        .gallery {
+            margin-top: 100px;
+            padding-top: 45px;
+            border-top: 1px solid #292929;
+        }
+
+        .gallery h2 {
+            margin-bottom: 30px;
+        }
+
+        .images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .images img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #292929;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .images img:hover {
+            transform: scale(1.02);
+            border-color: #555;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #292929;
+            color: #666;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding: 40px 22px 70px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .intro {
+                font-size: 17px;
+            }
+
+            .images {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="page">
+
+        <!-- BACK TO MAIN PAGE -->
+
+        <a href="index.html" class="back">
+            ← Back to experiments
+        </a>
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="date">
+                OCT 2025
+            </div>
+
+            <h1>
+                <a href="https://www.youtube.com/@EchoArtsEdits" style="color: rgb(32, 175, 252);">Echo Arts Edits</a>
+            </h1>
+
+            <p class="intro">
+                I created this YouTube channel to understand viewer retention and analytical tools given in YouTube Studio
+            </p>
+
+        </header>
+
+
+        <!-- ABOUT -->
+
+        <section class="section">
+
+            <h2>
+                About the channel
+            </h2>
+
+            <p>
+                I created this channel on October 2025.
+            </p>
+
+            <p>
+                Some videos might work perfectly. Some might completely
+                fail. That's part of the point.
+            </p>
+
+        </section>
+
+
+        <!-- WHAT I MAKE -->
+
+        <section class="section">
+
+            <h2>
+                What I make
+            </h2>
+
+            <p>
+                During October 2025, Stranger Things Season 5 had a huge hype and I grabbed the chance to make content about it.<br>
+                I made Stranger Things Meme and Fan Theories in Youtube Shorts.
+            </p>
+
+            <p>
+                Since Season 5 was a disaster, I stopped making content.
+            </p>
+
+        </section>
+
+
+        <!-- WHY -->
+
+        <section class="section">
+
+            <h2>
+                The Numbers
+            </h2>
+
+            <div class="highlight">
+
+                <p>
+                    Total Views: 42 Million and counting<br>
+                    Subscribers: 10.1k and counting<br>
+                    Estimated Revenue: 396$ USD - 37,931 INR
+                </p>
+
+            </div>
+
+            <p>
+                My channel for eligible for monetization twice but since i was using content tagged "Netflix Content" I did not get monetized.<br>
+                But still the goal for to understand trends and YouTube.
+            </p>
+
+        </section>
+
+
+        <!-- GALLERY -->
+
+        <section class="gallery">
+
+            <h2>
+                Behind the channel
+            </h2>
+
+            <div class="images">
+
+                <img src="image1.png" alt="Behind the scenes">
+
+                <img src="image2.png" alt="YouTube channel">
+
+                <img src="image3.png" alt="Video project">
+
+                <img src="image4.png" alt="Creative process">
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            youtube.com/@echoartsedits
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
+```

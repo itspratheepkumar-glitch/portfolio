@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pratheep — Student & Builder</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <meta name="description"
+        content="Personal portfolio of a student exploring code, technology, experiments and creative projects.">
+
+    <style>
+        /* =========================================================
+           BASE
+        ========================================================= */
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111111;
+            --surface-2: #161616;
+            --border: #252525;
+
+            --text: #f2f2f2;
+            --muted: #8c8c8c;
+
+            --accent: #ffffff;
+
+            --max-width: 1150px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(90%, var(--max-width));
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 100;
+
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-inner {
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 9vw, 7rem);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: var(--muted);
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+
+            padding: 12px 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+        .button.primary {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .scroll-note {
+            margin-top: 90px;
+
+            color: #555;
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-number {
+            color: #555;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            letter-spacing: -1.5px;
+        }
+
+        .section-description {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin-top: 12px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1.2fr 1fr;
+
+            gap: 60px;
+        }
+
+        .about-text {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .about-text span {
+            color: var(--muted);
+        }
+
+        .facts {
+            border-top: 1px solid var(--border);
+        }
+
+        .fact {
+            padding: 18px 0;
+
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+            justify-content: space-between;
+
+            color: var(--muted);
+        }
+
+        .fact strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+
+        /* =========================================================
+           CURRENTLY
+        ========================================================= */
+
+        .currently {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .currently-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .currently-card {
+            padding: 28px;
+
+            background: var(--surface-2);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .currently-card .icon {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .currently-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .currently-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           BUILDS
+        ========================================================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .project {
+            min-height: 280px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: 0.25s;
+        }
+
+        .project:hover {
+            border-color: #444;
+            transform: translateY(-4px);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .project-number {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .project-type {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .tech {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+
+            margin-top: 20px;
+        }
+
+        .tech span {
+            padding: 5px 9px;
+
+            border: 1px solid var(--border);
+            border-radius: 5px;
+
+            font-size: 11px;
+            color: #999;
+        }
+
+
+        /* =========================================================
+           EXPERIMENTS
+        ========================================================= */
+
+        .experiments {
+            display: grid;
+            gap: 1px;
+
+            background: var(--border);
+
+            border: 1px solid var(--border);
+        }
+
+        .experiment {
+            background: var(--bg);
+
+            padding: 25px;
+
+            display: grid;
+
+            grid-template-columns: 100px 1fr 100px;
+
+            gap: 20px;
+
+            align-items: center;
+        }
+
+        .experiment:hover {
+            background: var(--surface);
+        }
+
+        .experiment-date {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .experiment h3 {
+            margin-bottom: 4px;
+        }
+
+        .experiment p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .experiment-status {
+            text-align: right;
+
+            color: #777;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-group {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .skill-group h3 {
+            margin-bottom: 20px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill {
+            padding: 7px 11px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 6px;
+
+            font-size: 13px;
+
+            color: #bbb;
+        }
+
+
+        /* =========================================================
+           TIMELINE
+        ========================================================= */
+
+        .timeline {
+            position: relative;
+
+            border-left: 1px solid var(--border);
+
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding: 0 0 60px 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -5px;
+            top: 5px;
+
+            width: 9px;
+            height: 9px;
+
+            background: var(--bg);
+
+            border: 1px solid #777;
+
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            color: #555;
+
+            font-size: 12px;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 70px 0;
+
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .socials a:hover {
+            color: white;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .about-grid,
+            .projects,
+            .currently-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experiment {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .experiment-status {
+                text-align: left;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+    <nav>
+
+        <div class="container nav-inner">
+
+            <a href="#" class="logo">
+                PRATHEEP KUMAR K.
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#builds">Builds</a>
+                </li>
+
+                <li>
+                    <a href="#experiments">Experiments</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#timeline">Journey</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        STUDENT · BUILDER · CURIOUS MIND
+                    </p>
+
+                    <h1>
+                        Pratheep's<br>
+                        <span>Personal</span><br>
+                        Portfolio
+                    </h1>
+
+                    <p class="hero-description">
+                        I'm a student interested in coding, technology and
+                        understanding how things work. This is where I document
+                        what I'm learning, building and experimenting with.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#builds" class="button primary">
+                            Explore my work
+                        </a>
+
+                        <a href="#timeline" class="button">
+                            View my journey
+                        </a>
+
+                    </div>
+
+                    <p class="scroll-note">
+                        ↓ Scroll to explore
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     ABOUT
+========================================================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">01 — ABOUT</p>
+
+                    <h2 class="section-title">
+                        A little about me.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-text">
+
+                        I'm currently a student exploring the world of
+                        <span>software, technology and creative problem solving.</span>
+
+                        <br><br>
+
+                        I don't want this website to be just a resume.
+
+                        I want it to be a record of what I learn,
+                        what I build, the experiments that fail,
+                        and the things that make me curious.
+
+                    </div>
+
+
+                    <div class="facts">
+
+                        <div class="fact">
+                            <span>Currently</span>
+                            <strong>Student</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>Based in</span>
+                            <strong>Chennai, India</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>Studying</span>
+                            <strong>BBA</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>Interested in</span>
+                            <strong>Code + Technology</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     CURRENTLY LEARNING
+========================================================= -->
+
+        <section class="currently">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">02 — RIGHT NOW</p>
+
+                    <h2 class="section-title">
+                        Currently exploring.
+                    </h2>
+
+                    <p class="section-description">
+                        What I'm spending time learning and experimenting with
+                        at the moment.
+                    </p>
+
+                </div>
+
+
+                <div class="currently-grid">
+
+
+                    <div class="currently-card">
+
+                        <div class="icon">⌘</div>
+
+                        <h3>Programming</h3>
+
+                        <p>
+                            Improving my Python fundamentals and learning how
+                            to build more useful applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="currently-card">
+
+                        <div class="icon">◈</div>
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Learning how websites work and experimenting with
+                            HTML, CSS and JavaScript.
+                        </p>
+
+                    </div>
+
+
+                    <div class="currently-card">
+
+                        <div class="icon">◎</div>
+
+                        <h3>Technology</h3>
+
+                        <p>
+                            Exploring different areas of technology and
+                            following questions that genuinely interest me.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     BUILDS / PROJECTS
+========================================================= -->
+
+        <section id="builds">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">03 — BUILDS</p>
+
+                    <h2 class="section-title">
+                        Things I've built.
+                    </h2>
+
+                    <p class="section-description">
+                        Projects don't have to be huge. This section grows
+                        as I build more things.
+                    </p>
+
+                </div>
+
+
+                <div class="projects">
+
+
+                    <article class="project">
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                01
+                            </span>
+
+                            <span class="project-type">
+                                SOFTWARE
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Business Website
+                            </h3>
+
+                            <p>
+                                Built a website for a hypothetical business <br>
+
+                                <a href="https://artyspace.vercel.app/" target="_blank" style="color: rgb(32, 175, 252);">
+                                    View Project
+                                </a>
+                            </p>
+
+                            <div class="tech">
+
+                                <span>Html</span>
+                                <span>Java</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="project">
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                02
+                            </span>
+
+                            <span class="project-type">
+                                SOFTWARE
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Web Game
+                            </h3>
+
+                            <p>
+                                - Developed a website based game<br>
+                                - Able to store high score in cloud<br>
+                                <a href="https://shipflappy.vercel.app/" target="_blank" style="color: rgb(32, 175, 252);">
+                                    View Project
+                                </a>
+                            </p>
+
+                            <div class="tech">
+
+                                <span>Html</span>
+                                <span>Java</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="project">
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                03
+                            </span>
+
+                            <span class="project-type">
+                                HARDWARE
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Bluetooth Car
+                            </h3>
+
+                            <p>
+                                Arduino UNO Bluetooth controlled car 2WD<br>
+                                <a href="https://drive.google.com/file/d/1HdWjr964AHpUl51gabZLWBVyHp3mHEy4/view" target="_blank" style="color: rgb(32, 175, 252);">
+                                    View Project
+                                </a>
+                            </p>
+
+                            <div class="tech">
+
+                                <span>Arduino</span>
+                                <span>C++</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="project">
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                04
+                            </span>
+
+                            <span class="project-type">
+                                HARDWARE
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                More Projects
+                            </h3>
+
+                            <p>
+                                These are some of my Stuff I made in my School days.<br>
+                                <a href="https://drive.google.com/drive/u/2/folders/1HYVR0dahmSUAKsxuHyVOq6ZBAGDmmU2T" target="_blank"
+                                    style="color: rgb(32, 175, 252);">
+                                    View Projects
+                                </a>
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     EXPERIMENTS
+========================================================= -->
+
+        <section id="experiments">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">04 — EXPERIMENTS</p>
+
+                    <h2 class="section-title">
+                        Things I'm curious about.
+                    </h2>
+
+                    <p class="section-description">
+                        Small experiments, weird ideas, tests and questions.
+                        Not everything here needs to become a serious project.
+                    </p>
+
+                </div>
+
+
+                <div class="experiments">
+
+
+                    <div class="experiment">
+
+                        <div class="experiment-date">
+                            OCT 2025
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                <a href="youtube.html" style="color: rgb(32, 175, 252);">Echo Arts Edits</a>
+                            </h3>
+
+                            <p>
+                                - Youtube Shorts Channel<br>
+                                10k Subscribers<br>
+                                42M+ Total Views
+                            </p>
+
+                        </div>
+
+                        <div class="experiment-status">
+                            EXPLORING
+                        </div>
+
+                    </div>
+
+
+                    <div class="experiment">
+
+                        <div class="experiment-date">
+                            AUG 2026
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Understanding something
+                            </h3>
+
+                            <p>
+                                A small investigation into a concept I wanted
+                                to understand better.
+                            </p>
+
+                        </div>
+
+                        <div class="experiment-status">
+                            COMPLETE
+                        </div>
+
+                    </div>
+
+
+                    <div class="experiment">
+
+                        <div class="experiment-date">
+                            JUL 2026
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Failed experiment
+                            </h3>
+
+                            <p>
+                                Didn't work. Still learned something from it.
+                            </p>
+
+                        </div>
+
+                        <div class="experiment-status">
+                            FAILED
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     SKILLS
+========================================================= -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">05 — SKILLS</p>
+
+                    <h2 class="section-title">
+                        What I know.
+                    </h2>
+
+                    <p class="section-description">
+                        This isn't a list of everything I know. It's a snapshot
+                        of where I currently am.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <div class="skill-group">
+
+                        <h3>Programming</h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill">Python</span>
+                            <span class="skill">C++</span>
+                            <span class="skill">Java</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <h3>Data & Tools</h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill">MySQL</span>
+                            <span class="skill">Excel</span>
+                            <span class="skill">Git</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <h3>Creative</h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill">Canva</span>
+                            <span class="skill">CapCut</span>
+                            <span class="skill">DaVinci Resolve</span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     GROWTH TIMELINE
+========================================================= -->
+
+        <section id="timeline">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">06 — JOURNEY</p>
+
+                    <h2 class="section-title">
+                        Growth over time.
+                    </h2>
+
+                    <p class="section-description">
+                        A timeline of things I've learned, built and experienced.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <p class="timeline-year">
+                            2024
+                        </p>
+
+                        <h3>
+                            Started College
+                        </h3>
+
+                        <p>
+                            Began my BBA journey and started exploring
+                            technology alongside my studies.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <p class="timeline-year">
+                            2025
+                        </p>
+
+                        <h3>
+                            Started expanding my technical skills
+                        </h3>
+
+                        <p>
+                            Continued learning programming, databases,
+                            creative tools and technology.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <p class="timeline-year">
+                            2026 - NOW
+                        </p>
+
+                        <h3>
+                            Exploring software & technology
+                        </h3>
+
+                        <p>
+                            Building projects, experimenting with code and
+                            trying to understand how different technologies work.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <p class="timeline-year">
+                            NEXT
+                        </p>
+
+                        <h3>
+                            To be written...
+                        </h3>
+
+                        <p>
+                            This part of the website doesn't exist yet.
+                            I'll add it when I get there.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <p>
+                Built by me · Always learning.
+            </p>
+
+            <div class="socials">
+
+                <a href="#" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="#" target="_blank">
+                    YouTube
+                </a>
+
+                <a href="mailto:itspratheepkumar@gmail.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
